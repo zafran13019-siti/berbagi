@@ -804,9 +804,12 @@
     }, { threshold: 0.1 });
     $$('.reveal').forEach(el => observer.observe(el));
 
-    if (SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbzwycbKd9u2pdbs52ZrFtjKyq8TyGHbuLMcvFUfH3UuNZ40b8YE3sJN9IwEG5Wj3_Y3/exec') {
-      setTimeout(() => showToast('⚠️ Ganti SCRIPT_URL di kode dengan URL Apps Script Anda!', 'error'), 1000);
-    } else { loadPublicData(); }
+  // Cek apakah URL masih berupa placeholder atau kosong
+if (SCRIPT_URL.includes('YOUR_SCRIPT_URL') || SCRIPT_URL === '') {
+  setTimeout(() => showToast('⚠️ Ganti SCRIPT_URL di kode dengan URL Apps Script Anda!', 'error'), 1000);
+} else { 
+  loadPublicData(); 
+}
   </script>
 </body>
 </html>
