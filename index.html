@@ -4,18 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BonusHub | Promo & Giveaway Resmi</title>
-  <meta name="description" content="Ikuti giveaway eksklusif BonusHub. Transparan, aman, dan berhadiah menarik. Daftar sekarang dan dapatkan kode unik Anda!">
-  
-  <!-- Open Graph untuk Preview WhatsApp yang Profesional -->
-  <meta property="og:title" content="🎁 Giveaway Eksklusif BonusHub!">
-  <meta property="og:description" content="Menangkan hadiah menarik setiap minggu. Pendaftaran gratis, transparan, dan resmi. Klik untuk daftar!">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1200&auto=format&fit=crop">
-  
+  <meta name="description" content="Landing page promo dan giveaway yang elegan, transparan, dan terhubung ke Google Sheets.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --bg: #020617; --panel: rgba(15, 23, 42, 0.6); --panel-strong: rgba(15, 23, 42, 0.95);
@@ -33,20 +25,16 @@
     }
     a { color: inherit; text-decoration: none; }
     .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
-    
-    /* Navbar */
-    .nav-wrap { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(20px) saturate(180%); background: rgba(2, 6, 23, 0.8); border-bottom: 1px solid var(--line); transition: all 0.3s; }
-    .nav-wrap.scrolled { background: rgba(2, 6, 23, 0.95); border-bottom-color: var(--line-hover); }
+    .nav-wrap { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(20px) saturate(180%); background: rgba(2, 6, 23, 0.7); border-bottom: 1px solid var(--line); }
+    .nav-wrap.scrolled { background: rgba(2, 6, 23, 0.9); }
     .navbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 0; }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.1rem; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; }
     .brand-badge { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #020617; font-weight: 800; box-shadow: 0 8px 24px var(--brand-glow); }
     .nav-links { display: flex; gap: 24px; color: var(--muted); font-weight: 600; font-size: 0.95rem; }
     .nav-links a:hover { color: var(--text); }
     .nav-right { display: flex; gap: 10px; align-items: center; }
-    .nav-cta, .nav-admin-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; color: var(--text); }
-    .nav-cta:hover, .nav-admin-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--line-hover); transform: translateY(-1px); }
-
-    /* Hero */
+    .nav-cta, .nav-admin-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; }
+    .nav-cta:hover, .nav-admin-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--line-hover); }
     .hero { padding: 96px 0 64px; }
     .hero-grid { display: grid; grid-template-columns: 1.2fr 0.9fr; gap: 32px; align-items: stretch; }
     .hero-copy, .hero-card, .section-card, .glass-card { background: var(--panel); border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: var(--radius-xl); backdrop-filter: blur(20px) saturate(180%); }
@@ -56,32 +44,26 @@
     h1 { margin: 24px 0 20px; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 800; background: linear-gradient(180deg, #fff 0%, #cbd5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .hero-copy p { margin: 0 0 32px; color: var(--muted); font-size: 1.1rem; max-width: 60ch; }
     .cta-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 40px; }
-    
-    /* Buttons */
-    .btn { border: 0; cursor: pointer; padding: 14px 28px; border-radius: 14px; font-weight: 700; font-size: 1rem; font-family: inherit; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
+    .btn { border: 0; cursor: pointer; padding: 14px 28px; border-radius: 14px; font-weight: 700; font-size: 1rem; font-family: inherit; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
     .btn:hover { transform: translateY(-2px); }
     .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
     .btn-primary { color: #020617; background: linear-gradient(135deg, var(--brand), #34d399); box-shadow: 0 12px 24px var(--brand-glow); }
     .btn-secondary { color: var(--text); background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line); }
     .btn-wa { color: #fff; background: var(--wa); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); }
     .btn-wa:hover { background: #20bd5a; }
+    .btn-danger { color: #fff; background: var(--danger); box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3); }
     .btn-sm { padding: 8px 16px; font-size: 0.85rem; border-radius: 10px; }
-
-    /* Stats & Cards */
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .stat { padding: 20px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); text-align: center; }
-    .stat strong { display: block; font-size: 1.8rem; margin-bottom: 4px; color: var(--brand); }
+    .stat { padding: 20px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); }
+    .stat strong { display: block; font-size: 1.5rem; margin-bottom: 4px; }
     .stat span { color: var(--muted); font-size: 0.85rem; }
     .hero-card { padding: 32px; display: flex; flex-direction: column; gap: 24px; }
     .card-header { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
     .chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; color: #bfdbfe; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); }
     .prize-grid { display: grid; gap: 16px; }
-    .prize { padding: 20px; border-radius: var(--radius-lg); background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)); border: 1px solid var(--line); transition: all 0.3s; }
-    .prize:hover { border-color: var(--line-hover); transform: translateY(-2px); }
+    .prize { padding: 20px; border-radius: var(--radius-lg); background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)); border: 1px solid var(--line); }
     .prize strong { display: block; font-size: 1.05rem; margin-bottom: 6px; }
     .prize p, .muted { color: var(--muted); line-height: 1.6; font-size: 0.95rem; }
-
-    /* Sections */
     section { padding: 64px 0; }
     .section-head { margin-bottom: 32px; }
     .section-head h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -0.03em; font-weight: 800; }
@@ -95,12 +77,10 @@
     .two-col { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 24px; }
     .notice-list { display: grid; gap: 16px; margin-top: 24px; }
     .notice { padding: 18px 20px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); display: flex; gap: 12px; align-items: flex-start; color: var(--muted); }
-    .notice::before { content: "✓"; color: var(--brand); font-weight: 800; flex-shrink: 0; }
+    .notice::before { content: "✓"; color: var(--brand); font-weight: 800; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
     .contact-box { padding: 28px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); }
     .contact-number { display: block; margin: 8px 0 20px; font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 800; }
-
-    /* Form */
     form { display: grid; gap: 20px; }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     label { display: grid; gap: 8px; font-size: 0.9rem; font-weight: 600; color: #e2e8f0; }
@@ -108,10 +88,8 @@
     input::placeholder, textarea::placeholder { color: rgba(148, 163, 184, 0.6); }
     input:focus, select:focus, textarea:focus { background: rgba(15, 23, 42, 0.8); border-color: var(--brand); box-shadow: 0 0 0 4px var(--brand-glow); }
     textarea { min-height: 120px; resize: vertical; }
-    .consent { display: flex; gap: 12px; color: var(--muted); font-size: 0.9rem; cursor: pointer; align-items: flex-start; }
-    .consent input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--brand); flex-shrink: 0; }
-
-    /* Winners */
+    .consent { display: flex; gap: 12px; color: var(--muted); font-size: 0.9rem; cursor: pointer; }
+    .consent input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--brand); }
     .winner-card { position: relative; overflow: hidden; border: 1px solid rgba(245, 158, 11, 0.2); background: linear-gradient(180deg, rgba(245, 158, 11, 0.05), rgba(15, 23, 42, 0.6)); transition: transform 0.3s ease; }
     .winner-card:hover { transform: translateY(-4px); }
     .winner-card::before { content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent); animation: shimmer 3s infinite; }
@@ -119,68 +97,55 @@
     .winner-card strong { display: block; font-size: 1.2rem; margin-bottom: 8px; }
     .winner-tag { display: inline-flex; padding: 6px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; color: #fef3c7; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); margin-bottom: 12px; }
     .winner-wa-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; color: #dcfce7; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); margin-top: 8px; }
-
-    /* Footer */
+    .faq-item h3 { margin-bottom: 12px; font-size: 1.1rem; }
     .footer { padding: 48px 0 64px; color: var(--muted); }
     .footer-card { display: flex; justify-content: space-between; gap: 24px; align-items: center; padding: 32px; border-radius: var(--radius-xl); background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); }
-
-    /* Toast */
     .toast { position: fixed; right: 24px; bottom: 24px; z-index: 200; padding: 16px 20px; border-radius: var(--radius-lg); background: var(--panel-strong); border: 1px solid var(--line-hover); color: var(--text); box-shadow: var(--shadow); opacity: 0; transform: translateY(20px) scale(0.95); pointer-events: none; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: flex; align-items: center; gap: 12px; font-weight: 600; }
     .toast.show { opacity: 1; transform: translateY(0) scale(1); }
     .toast-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--brand); color: #020617; display: grid; place-items: center; font-weight: 800; }
     .toast.error .toast-icon { background: var(--danger); color: #fff; }
-
-    /* Modal & Admin */
-    .modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(8px); z-index: 100; display: none; align-items: center; justify-content: center; padding: 20px; }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px); z-index: 100; display: none; align-items: center; justify-content: center; padding: 20px; }
     .modal-overlay.active { display: flex; }
     .modal { background: var(--panel-strong); border: 1px solid var(--line-hover); border-radius: var(--radius-xl); max-width: 1000px; width: 100%; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); }
     .modal-header { padding: 24px 32px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
     .modal-header h2 { font-size: 1.4rem; margin: 0; }
-    .modal-close { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line); color: var(--text); width: 36px; height: 36px; border-radius: 10px; cursor: pointer; font-size: 1.2rem; display: grid; place-items: center; }
+    .modal-close { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line); color: var(--text); width: 36px; height: 36px; border-radius: 10px; cursor: pointer; font-size: 1.2rem; }
     .modal-body { padding: 24px 32px; overflow-y: auto; flex: 1; }
     .login-form { max-width: 400px; margin: 40px auto; display: grid; gap: 16px; }
+    .login-form input { padding: 16px; font-size: 1rem; }
     .tabs { display: flex; gap: 8px; border-bottom: 1px solid var(--line); margin-bottom: 24px; overflow-x: auto; }
     .tab { padding: 12px 20px; cursor: pointer; border-bottom: 2px solid transparent; color: var(--muted); font-weight: 600; font-size: 0.95rem; white-space: nowrap; transition: all 0.2s; background: none; border: none; font-family: inherit; }
     .tab:hover { color: var(--text); }
     .tab.active { color: var(--brand); border-bottom-color: var(--brand); }
     .tab-content { display: none; }
-    .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* Data Table */
+    .tab-content.active { display: block; }
     .data-table-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--line); }
     .data-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 800px; }
     .data-table th { background: rgba(16, 185, 129, 0.1); padding: 14px 16px; text-align: left; font-weight: 700; color: var(--text); border-bottom: 1px solid var(--line); }
     .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); color: var(--muted); }
     .data-table tr:hover td { background: rgba(255, 255, 255, 0.02); }
+    .data-table td strong { color: var(--text); }
     .action-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; align-items: center; }
     .search-input { flex: 1; min-width: 200px; }
-
-    /* Success Ticket */
-    .success-panel { text-align: center; padding: 20px 0; }
-    .success-icon { width: 80px; height: 80px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); color: var(--brand); display: grid; place-items: center; font-size: 2.5rem; margin: 0 auto 20px; border: 2px solid var(--brand); box-shadow: 0 0 30px var(--brand-glow); }
-    .kode-unik-box { background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05)); border: 2px dashed var(--accent); padding: 24px; border-radius: 16px; margin: 24px 0; position: relative; overflow: hidden; }
-    .kode-unik-box::before { content: "🎟️ TIKET RESMI"; position: absolute; top: 10px; right: -30px; background: var(--accent); color: #000; font-size: 0.7rem; font-weight: 800; padding: 4px 30px; transform: rotate(45deg); }
-    .kode-unik-box strong { font-size: 2rem; color: var(--accent); letter-spacing: 3px; font-weight: 800; display: block; margin-top: 8px; }
-    .wa-share-options { display: grid; gap: 12px; margin-top: 24px; max-width: 400px; margin-left: auto; margin-right: auto; }
-
-    /* Winners Editor */
     .winner-editor { display: grid; gap: 16px; }
     .winner-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr auto; gap: 10px; padding: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); border-radius: var(--radius-md); }
     .winner-row input { padding: 10px 12px; font-size: 0.9rem; }
-    .remove-winner { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: #fecaca; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; align-self: center; display: grid; place-items: center; }
+    .remove-winner { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: #fecaca; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; align-self: center; }
     .setting-grid { display: grid; gap: 20px; max-width: 600px; }
+    .setting-grid label { font-weight: 600; }
+    
+    /* Success Modal Specific */
+    .success-panel { text-align: center; padding: 20px 0; }
+    .success-icon { width: 80px; height: 80px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); color: var(--brand); display: grid; place-items: center; font-size: 2.5rem; margin: 0 auto 20px; border: 2px solid var(--brand); }
+    .kode-unik-box { background: rgba(255,255,255,0.05); border: 1px dashed var(--brand); padding: 16px; border-radius: 12px; margin: 20px 0; }
+    .kode-unik-box strong { font-size: 1.5rem; color: var(--brand); letter-spacing: 2px; }
+    .wa-share-options { display: grid; gap: 12px; margin-top: 24px; }
 
-    /* Scroll Animation */
-    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-
-    /* Responsive */
     @media (max-width: 980px) {
       .hero-grid, .two-col, .feature-grid, .winner-grid, .faq-grid, .contact-grid { grid-template-columns: 1fr; }
       .field-row, .stats { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      .footer-card { flex-direction: column; align-items: flex-start; text-align: left; }
+      .footer-card { flex-direction: column; align-items: flex-start; }
       .winner-row { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 640px) {
@@ -188,7 +153,6 @@
       .hero-copy, .hero-card, .section-card, .glass-card { padding: 24px; }
       .modal-header, .modal-body { padding: 20px; }
       .winner-row { grid-template-columns: 1fr; }
-      .kode-unik-box strong { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -203,7 +167,7 @@
         <a href="#fitur">Fitur</a>
         <a href="#kontak">Kontak</a>
         <a href="#pemenang">Pemenang</a>
-        <a href="#syarat">Syarat & Ketentuan</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-right">
         <button class="nav-admin-btn" id="adminBtn" title="Panel Admin">
@@ -218,33 +182,32 @@
   <main id="home">
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <span class="eyebrow" id="heroEyebrow">✨ EDISI SPESIAL • TERBATAS • RESMI</span>
-          <h1 id="heroTitle">Giveaway Eksklusif: Menangkan Hadiah Menarik Setiap Minggu!</h1>
-          <p id="heroSubtitle">Bergabunglah dengan ribuan peserta lainnya. Transparan, aman, dan langsung terhubung ke sistem kami.</p>
+        <div class="hero-copy">
+          <span class="eyebrow" id="heroEyebrow">✨ Promo Profesional • Transparan • Aman</span>
+          <h1 id="heroTitle">Bangun halaman promo dan giveaway yang premium, rapi, dan dipercaya.</h1>
+          <p id="heroSubtitle">Template ini dirancang untuk kampanye yang jujur dan aman: pengunjung bisa menyimpan nomor admin, mendaftar secara sukarela, melihat pengumuman pemenang, dan memahami aturan promo dengan jelas.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#daftar">
+            <button class="btn btn-primary" id="saveContactButton" type="button">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Daftar & Dapatkan Kode
-            </a>
-            <a class="btn btn-secondary" href="#pemenang">Lihat Pemenang</a>
+              Simpan Nomor Admin
+            </button>
+            <a class="btn btn-secondary" href="#daftar">Gabung Giveaway</a>
           </div>
           <div class="stats">
-            <div class="stat"><strong id="statTotal">0</strong><span>Total Pendaftar</span></div>
-            <div class="stat"><strong>100%</strong><span>Transparan</span></div>
-            <div class="stat"><strong>Gratis</strong><span>Tanpa Biaya</span></div>
+            <div class="stat"><strong>1 File</strong><span>Langsung upload ke GitHub Pages</span></div>
+            <div class="stat"><strong>100%</strong><span>Front-end tanpa server</span></div>
+            <div class="stat"><strong>Terintegrasi</strong><span>Data ke Google Sheets</span></div>
           </div>
         </div>
-
-        <aside class="hero-card reveal" style="transition-delay: 0.1s;">
+        <aside class="hero-card">
           <div class="card-header">
-            <div><strong style="font-size:1.2rem;">Program Minggu Ini</strong><p class="muted" style="margin-top:4px;">Hadiah yang bisa Anda menangkan.</p></div>
+            <div><strong style="font-size:1.2rem;">Program Minggu Ini</strong><p class="muted" style="margin-top:4px;">Contoh hadiah dan benefit yang bisa Anda sesuaikan.</p></div>
             <span class="chip">✓ Terverifikasi</span>
           </div>
           <div class="prize-grid">
-            <div class="prize"><strong>🎁 Bonus Referral</strong><p>Reward khusus untuk peserta yang mengajak teman.</p></div>
-            <div class="prize"><strong>💎 Saldo / Hadiah Utama</strong><p>Nominal dan syarat diumumkan secara terbuka.</p></div>
-            <div class="prize"><strong>📢 Publikasi Pemenang</strong><p>Diumumkan di WhatsApp dan Website secara transparan.</p></div>
+            <div class="prize"><strong>🎁 Bonus Referral</strong><p>Berikan reward yang jelas untuk peserta yang mengajak teman.</p></div>
+            <div class="prize"><strong>💎 Saldo / Hadiah Utama</strong><p>Atur nominal, syarat, dan waktu pengumuman secara terbuka.</p></div>
+            <div class="prize"><strong>📢 Publikasi Pemenang</strong><p>Umumkan daftar pemenang secara manual dan transparan.</p></div>
           </div>
         </aside>
       </div>
@@ -252,28 +215,28 @@
 
     <section id="fitur">
       <div class="container">
-        <div class="section-head reveal"><h2>Fitur Inti</h2><p>Semua elemen dibuat untuk pengalaman kampanye yang elegan, jelas, dan mudah dipercaya.</p></div>
+        <div class="section-head"><h2>Fitur Inti</h2><p>Semua elemen dibuat untuk landing page promosi yang elegan, jelas, dan mudah dipercaya.</p></div>
         <div class="feature-grid">
-          <article class="section-card reveal"><div class="icon-dot">01</div><h3>Tombol Simpan Nomor</h3><p class="muted">Menghasilkan file kontak VCF agar pengunjung menyimpan nomor admin dengan satu klik.</p></article>
-          <article class="section-card reveal" style="transition-delay: 0.1s;"><div class="icon-dot">02</div><h3>Form Terintegrasi</h3><p class="muted">Data pendaftar langsung tersimpan aman di Google Sheets resmi Anda secara real-time.</p></article>
-          <article class="section-card reveal" style="transition-delay: 0.2s;"><div class="icon-dot">03</div><h3>Verifikasi WhatsApp</h3><p class="muted">Sistem kode unik memungkinkan admin memverifikasi share status WA peserta dengan mudah.</p></article>
+          <article class="section-card"><div class="icon-dot">01</div><h3>Tombol Simpan Nomor</h3><p class="muted">Menghasilkan file kontak VCF agar pengunjung menyimpan nomor admin dengan satu klik.</p></article>
+          <article class="section-card"><div class="icon-dot">02</div><h3>Form Sukarela</h3><p class="muted">Pengunjung dapat mendaftar secara sadar melalui form yang terintegrasi Google Sheets.</p></article>
+          <article class="section-card"><div class="icon-dot">03</div><h3>Verifikasi WhatsApp</h3><p class="muted">Sistem kode unik memungkinkan admin memverifikasi share status WA peserta dengan mudah.</p></article>
         </div>
       </div>
     </section>
 
     <section>
       <div class="container two-col">
-        <article class="glass-card reveal">
+        <article class="glass-card">
           <div class="section-head"><h2>Transparansi Kampanye</h2><p>Versi ini sengaja dibuat aman: tidak mengambil data tersembunyi dan tidak memakai klaim palsu.</p></div>
           <div class="notice-list">
             <div class="notice">Peserta hanya mengirim data jika mereka setuju secara sadar melalui form.</div>
-            <div class="notice">Data pendaftar tersimpan otomatis di Google Sheets yang Anda miliki sepenuhnya.</div>
-            <div class="notice">Admin dapat mengunduh semua data sebagai CSV dan memverifikasi share WA dengan satu klik.</div>
+            <div class="notice">Data pendaftar tersimpan otomatis di Google Sheets yang Anda miliki.</div>
+            <div class="notice">Admin dapat mengunduh semua data sebagai CSV dan memverifikasi share WA.</div>
           </div>
         </article>
-        <article class="glass-card reveal" id="kontak" style="transition-delay: 0.1s;">
+        <article class="glass-card" id="kontak">
           <h2 style="font-size:1.5rem; font-weight:800;">Kontak Admin</h2>
-          <p class="muted">Hubungi kami untuk pertanyaan seputar kampanye.</p>
+          <p class="muted">Kontak resmi kampanye ini.</p>
           <div class="contact-grid">
             <div class="contact-box">
               <span class="muted" style="font-size:0.85rem; font-weight:600; text-transform:uppercase;">Nama kontak</span>
@@ -281,8 +244,8 @@
               <span class="muted" style="font-size:0.85rem; font-weight:600; text-transform:uppercase;">Nomor WhatsApp</span>
               <strong class="contact-number" id="displayPhone">+62 812-3456-7890</strong>
               <div class="cta-row" style="margin:24px 0 0;">
-                <button class="btn btn-primary btn-sm" id="saveContactButton">Download Kontak</button>
-                <a class="btn btn-secondary btn-sm" id="chatLink" href="#" target="_blank" rel="noreferrer">Chat WA</a>
+                <button class="btn btn-primary" id="saveContactButtonSecondary" type="button">Download Kontak</button>
+                <a class="btn btn-secondary" id="chatLink" href="#" target="_blank" rel="noreferrer">Chat WA</a>
               </div>
             </div>
             <div class="contact-box">
@@ -300,7 +263,7 @@
 
     <section id="daftar">
       <div class="container two-col">
-        <article class="glass-card reveal" id="formCard">
+        <article class="glass-card" id="formCard">
           <div class="section-head"><h2>Form Pendaftaran</h2><p>Isi form di bawah ini. Data Anda akan tersimpan aman di sistem kampanye kami.</p></div>
           <form id="entryForm">
             <div class="field-row">
@@ -318,51 +281,56 @@
               </label>
               <label>Kota<input id="city" name="city" type="text" placeholder="Contoh: Surabaya"></label>
             </div>
+            <label>Catatan<textarea id="note" name="note" placeholder="Tulis pertanyaan atau pesan singkat"></textarea></label>
             <label class="consent">
               <input id="consent" name="consent" type="checkbox" required>
-              <span>Saya setuju mengirim data ini secara sukarela dan mematuhi <a href="#syarat" style="color:var(--brand); text-decoration:underline;">Syarat & Ketentuan</a> yang berlaku.</span>
+              <span>Saya setuju mengirim data ini secara sukarela untuk keperluan promo yang dijelaskan di halaman ini.</span>
             </label>
             <div class="cta-row" style="margin-bottom:0;">
-              <button class="btn btn-primary" type="submit" id="submitBtn" style="width:100%;">Kirim Pendaftaran</button>
+              <button class="btn btn-primary" type="submit" id="submitBtn">Kirim Pendaftaran</button>
             </div>
           </form>
         </article>
 
-        <article class="glass-card reveal" id="successCard" style="display: none;">
+        <article class="glass-card" id="successCard" style="display: none;">
           <div class="success-panel">
             <div class="success-icon">✓</div>
             <h2 style="margin-bottom: 8px;">Pendaftaran Berhasil! 🎉</h2>
-            <p class="muted">Terima kasih telah mendaftar. Simpan kode unik Anda di bawah ini sebagai bukti pendaftaran.</p>
+            <p class="muted">Terima kasih telah mendaftar. Simpan kode unik Anda di bawah ini.</p>
             
             <div class="kode-unik-box">
-              <span class="muted" style="font-size: 0.9rem; font-weight: 600;">KODE PENDAFTARAN ANDA</span>
-              <strong id="displayKodeUnik">BH-000000</strong>
+              <span class="muted" style="font-size: 0.9rem;">Kode Pendaftaran Anda:</span><br>
+              <strong id="displayKodeUnik">BH-00000</strong>
             </div>
 
             <p class="muted" style="font-size: 0.95rem; margin-bottom: 16px;">
-              <strong style="color: var(--text);">Langkah Selanjutnya (Wajib):</strong><br>
+              <strong style="color: var(--text);">Langkah Selanjutnya:</strong><br>
               1. Klik tombol di bawah untuk mengirim bukti ke Admin.<br>
               2. Share info ini ke Status WhatsApp Anda.<br>
               3. Admin akan memverifikasi kode unik Anda.
             </p>
 
             <div class="wa-share-options">
-              <button id="btnShareNative" class="btn btn-wa">
+              <a id="btnShareToAdmin" href="#" target="_blank" class="btn btn-wa">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Kirim Bukti ke Admin
+              </a>
+              <a id="btnShareToStatus" href="#" target="_blank" class="btn btn-secondary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                Bagikan Sekarang
-              </button>
+                Share ke Status WhatsApp Saya
+              </a>
               <button class="btn btn-secondary" id="resetFormBtn">Kembali ke Form</button>
             </div>
           </div>
         </article>
 
-        <article class="glass-card reveal" style="transition-delay: 0.1s;">
+        <article class="glass-card">
           <h2 style="font-size:1.5rem; font-weight:800;">Info Kampanye</h2>
           <p class="muted">Data Anda tersimpan dengan aman di Google Sheets resmi kampanye.</p>
           <div class="stats" style="margin-top:24px;">
             <div class="stat" style="grid-column: 1 / -1;">
-              <strong id="publicEntryCount">0</strong>
-              <span>Total peserta yang telah bergabung</span>
+              <strong id="publicEntryCount">0 pendaftar</strong>
+              <span>Total peserta yang telah bergabung dalam kampanye ini</span>
             </div>
           </div>
           <div class="prize" style="margin-top:24px;">
@@ -375,49 +343,31 @@
 
     <section id="pemenang">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <h2>🏆 Pengumuman Pemenang</h2>
-          <p>Pemenang kampanye minggu ini yang telah diverifikasi dan diumumkan secara resmi.</p>
+          <p>Pemenang kampanye minggu ini yang telah diverifikasi dan diumumkan.</p>
         </div>
-        <div class="winner-grid reveal" id="winnerGrid">
+        <div class="winner-grid" id="winnerGrid">
           <article class="section-card" style="text-align:center; color:var(--muted); grid-column: 1/-1;"><p>Memuat data pemenang...</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="syarat">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>📜 Syarat & Ketentuan</h2>
-          <p>Mohon dibaca dengan saksama sebelum mengikuti kampanye ini.</p>
-        </div>
-        <div class="glass-card reveal">
-          <div class="notice-list">
-            <div class="notice">Kampanye ini GRATIS dan tidak dipungut biaya apapun dalam bentuk apapun.</div>
-            <div class="notice">Peserta wajib membagikan info kampanye ke Status WhatsApp dan mengirim bukti ke Admin untuk diverifikasi.</div>
-            <div class="notice">Pemenang akan diumumkan di Status WhatsApp Admin terlebih dahulu, kemudian diperbarui di halaman website ini.</div>
-            <div class="notice">Keputusan Admin adalah mutlak dan tidak dapat diganggu gugat.</div>
-            <div class="notice">Peserta yang terindikasi melakukan kecurangan (spam, data palsu) akan didiskualifikasi.</div>
-          </div>
         </div>
       </div>
     </section>
 
     <section id="faq">
       <div class="container">
-        <div class="section-head reveal"><h2>Pertanyaan Umum (FAQ)</h2><p>Penjelasan singkat tentang fungsi halaman dan cara kerja kampanye.</p></div>
+        <div class="section-head"><h2>Pertanyaan Umum (FAQ)</h2><p>Penjelasan singkat tentang fungsi halaman dan cara kerja kampanye.</p></div>
         <div class="faq-grid">
-          <article class="section-card faq-item reveal"><h3>Apakah data saya aman?</h3><p class="muted">Ya. Data disimpan di Google Sheets resmi kampanye dengan akses terbatas hanya untuk admin.</p></article>
-          <article class="section-card faq-item reveal" style="transition-delay: 0.1s;"><h3>Bagaimana cara tahu saya menang?</h3><p class="muted">Pemenang akan diumumkan di Status WhatsApp Admin terlebih dahulu, lalu ditampilkan di website ini.</p></article>
-          <article class="section-card faq-item reveal" style="transition-delay: 0.2s;"><h3>Apakah bisa mendaftar dua kali?</h3><p class="muted">Bisa, tetapi hanya satu entri per nomor WhatsApp yang akan dihitung untuk pengundian hadiah.</p></article>
-          <article class="section-card faq-item reveal" style="transition-delay: 0.3s;"><h3>Siapa yang bisa melihat data saya?</h3><p class="muted">Hanya admin kampanye yang memiliki akses ke Google Sheets resmi. Data tidak dipublikasikan.</p></article>
+          <article class="section-card faq-item"><h3>Apakah data saya aman?</h3><p class="muted">Ya. Data disimpan di Google Sheets resmi kampanye dengan akses terbatas hanya untuk admin.</p></article>
+          <article class="section-card faq-item"><h3>Bagaimana cara tahu saya menang?</h3><p class="muted">Pemenang akan diumumkan di Status WhatsApp Admin terlebih dahulu, lalu ditampilkan di website ini.</p></article>
+          <article class="section-card faq-item"><h3>Apakah bisa mendaftar dua kali?</h3><p class="muted">Bisa, tetapi hanya satu entri per nomor yang akan dihitung untuk pengundian hadiah.</p></article>
+          <article class="section-card faq-item"><h3>Siapa yang bisa melihat data saya?</h3><p class="muted">Hanya admin kampanye yang memiliki akses ke Google Sheets resmi.</p></article>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-card reveal">
+    <div class="container footer-card">
       <div>
         <strong id="footerBrand" style="font-size:1.1rem;">BonusHub Promo</strong>
         <p class="muted" style="margin:8px 0 0; max-width:40ch;">Template promo profesional terintegrasi Google Sheets dengan panel admin penuh.</p>
@@ -445,7 +395,7 @@
     // ====== KONFIGURASI ======
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzwycbKd9u2pdbs52ZrFtjKyq8TyGHbuLMcvFUfH3UuNZ40b8YE3sJN9IwEG5Wj3_Y3/exec'; // GANTI DENGAN URL WEB APP ANDA
 
-    let appState = { isAdmin: false, adminToken: null, config: {}, entries: [], winners: [], currentKode: '' };
+    let appState = { isAdmin: false, adminToken: null, config: {}, entries: [], winners: [] };
     const $ = (sel) => document.querySelector(sel);
     const $$ = (sel) => document.querySelectorAll(sel);
 
@@ -478,27 +428,9 @@
       try {
         const configRes = await apiCall('config', {}, 'GET');
         if (configRes.success) { appState.config = configRes.data; applyConfigToUI(); }
-        
-        const statsRes = await apiCall('stats', {}, 'GET');
-        if (statsRes.success) { 
-          animateValue($('#publicEntryCount'), 0, statsRes.data.total, 1500);
-          animateValue($('#statTotal'), 0, statsRes.data.total, 1500);
-        }
-
         const winnersRes = await apiCall('winners', {}, 'GET');
         if (winnersRes.success) { appState.winners = winnersRes.data; renderWinners(); }
       } catch (err) { console.error('Gagal memuat data:', err); }
-    }
-
-    function animateValue(obj, start, end, duration) {
-      let startTimestamp = null;
-      const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerHTML = Math.floor(progress * (end - start) + start);
-        if (progress < 1) { window.requestAnimationFrame(step); }
-      };
-      window.requestAnimationFrame(step);
     }
 
     function applyConfigToUI() {
@@ -523,7 +455,7 @@
           <span class="winner-tag">${escapeHtml(w.tag)}</span>
           <strong>${escapeHtml(w.nama)} - ${escapeHtml(w.kota)}</strong>
           <p class="muted">${escapeHtml(w.deskripsi)}</p>
-          ${w.tanggalWa && w.tanggalWa !== 'Segera' ? `<div class="winner-wa-badge">📱 Diumumkan di WA: ${escapeHtml(w.tanggalWa)}</div>` : '<div class="winner-wa-badge" style="background:rgba(245,158,11,0.15); color:#fbbf24; border-color:rgba(245,158,11,0.3);">⏳ Segera Diumumkan</div>'}
+          ${w.tanggalWa && w.tanggalWa !== '-' ? `<div class="winner-wa-badge">📱 Diumumkan di Status WA: ${escapeHtml(w.tanggalWa)}</div>` : ''}
         </article>
       `).join('');
     }
@@ -537,7 +469,7 @@
       showToast('File kontak berhasil diunduh.');
     }
 
-    // ====== FORM SUBMIT & SHARE ======
+    // ====== FORM SUBMIT DENGAN SHARE WA ======
     $('#entryForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = $('#submitBtn');
@@ -545,14 +477,22 @@
       btn.innerHTML = 'Memproses...'; btn.disabled = true;
 
       try {
-        const payload = { fullName: $('#fullName').value.trim(), phoneNumber: $('#phoneNumber').value.trim(), program: $('#program').value, city: $('#city').value.trim() || '-' };
+        const payload = { fullName: $('#fullName').value.trim(), phoneNumber: $('#phoneNumber').value.trim(), program: $('#program').value, city: $('#city').value.trim() || '-', note: $('#note').value.trim() };
         const res = await apiCall('submitEntry', payload);
         if (res.success) {
-          appState.currentKode = res.kodeUnik;
+          // Tampilkan panel sukses
           $('#formCard').style.display = 'none';
           $('#successCard').style.display = 'block';
           $('#displayKodeUnik').textContent = res.kodeUnik;
-          showToast('Pendaftaran berhasil! Silakan bagikan.');
+          
+          // Setup link WhatsApp
+          const waAdminMsg = `Halo Admin ${appState.config.brandName || 'BonusHub'}! 👋\n\nSaya sudah mendaftar giveaway.\n\n👤 Nama: ${payload.fullName}\n🆔 Kode Pendaftaran: ${res.kodeUnik}\n🎯 Program: ${payload.program}\n\nSaya sudah membagikan info ini ke status WhatsApp saya. Mohon diverifikasi. Terima kasih! 🙏`;
+          const waStatusMsg = `🎉 Saya resmi mendaftar di ${appState.config.brandName || 'BonusHub'}!\n\nIkutan giveaway-nya biar bisa dapat hadiah menarik. Yang mau ikutan juga, cek langsung di websitenya ya! 👇\n\n#BonusHub #Giveaway #Promo`;
+          
+          $('#btnShareToAdmin').href = `https://wa.me/${appState.config.whatsappRaw}?text=${encodeURIComponent(waAdminMsg)}`;
+          $('#btnShareToStatus').href = `https://wa.me/?text=${encodeURIComponent(waStatusMsg)}`;
+          
+          showToast('Pendaftaran berhasil! Silakan share ke WhatsApp.');
         } else {
           showToast('Gagal: ' + (res.error || 'Unknown error'), 'error');
         }
@@ -561,30 +501,6 @@
       } finally {
         btn.innerHTML = originalText; btn.disabled = false;
       }
-    });
-
-    $('#btnShareNative').addEventListener('click', async () => {
-      const c = appState.config;
-      const shareText = `🎉 Saya resmi mendaftar di *${c.brandName || 'BonusHub'}*!\n\n🆔 Kode Pendaftaran Saya: *${appState.currentKode}*\n\nIkutan giveaway-nya biar bisa dapat hadiah menarik. Yang mau ikutan juga, cek langsung di websitenya ya! 👇\n\n${window.location.href}`;
-      
-      // Coba Web Share API (Native Mobile Share) terlebih dahulu
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: `Daftar ${c.brandName || 'BonusHub'}`,
-            text: shareText,
-            url: window.location.href
-          });
-          showToast('Terima kasih telah membagikan!');
-          return;
-        } catch (err) {
-          console.log('Share dibatalkan atau gagal, fallback ke WA');
-        }
-      }
-      
-      // Fallback ke WhatsApp Web/App
-      const waUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
-      window.open(waUrl, '_blank');
     });
 
     $('#resetFormBtn').addEventListener('click', () => {
@@ -601,10 +517,10 @@
           <div style="text-align:center; margin-bottom:20px;">
             <div style="width:64px; height:64px; border-radius:20px; margin:0 auto 16px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); display:grid; place-items:center; color:#020617; font-size:1.8rem; font-weight:800;">🔐</div>
             <h3>Masuk ke Panel Admin</h3>
-            <p class="muted" style="margin-top:8px;">Masukkan password untuk mengelola kampanye</p>
+            <p class="muted" style="margin-top:8px;">Masukkan password admin untuk melanjutkan</p>
           </div>
           <input type="password" id="adminPassword" placeholder="Password" required autofocus>
-          <button type="submit" class="btn btn-primary" id="loginBtn" style="width:100%;">Masuk</button>
+          <button type="submit" class="btn btn-primary" id="loginBtn">Masuk</button>
         </form>`;
       $('#loginForm').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -687,7 +603,7 @@
     }
 
     function renderEntriesTable(filter = '') {
-      const entries = appState.entries;
+      const entries = appState.entries.slice().reverse();
       const filtered = filter ? entries.filter(e => {
         const s = filter.toLowerCase();
         return (e['Nama Lengkap'] || '').toLowerCase().includes(s) || (e['No. WhatsApp'] || '').toLowerCase().includes(s) || (e.Kota || '').toLowerCase().includes(s) || (e['Kode Unik'] || '').toLowerCase().includes(s);
@@ -703,14 +619,14 @@
             <tbody>
               ${filtered.map(e => `
                 <tr>
-                  <td>${e.Timestamp}</td>
-                  <td><strong style="color:var(--accent); font-family:monospace; font-size:1.1rem;">${escapeHtml(e['Kode Unik'])}</strong></td>
+                  <td>${new Date(e.Timestamp).toLocaleDateString('id-ID')}</td>
+                  <td><strong style="color:var(--brand);">${escapeHtml(e['Kode Unik'])}</strong></td>
                   <td><strong>${escapeHtml(e['Nama Lengkap'])}</strong></td>
                   <td>${escapeHtml(e['No. WhatsApp'])}</td>
                   <td>${escapeHtml(e.Program)}</td>
-                  <td><span style="padding:4px 10px; border-radius:6px; font-size:0.8rem; font-weight:600; background:${String(e['Status Share WA']).includes('Sudah') ? 'rgba(16,185,129,0.15); color:#10b981;' : 'rgba(239,68,68,0.15); color:#ef4444;'}">${escapeHtml(e['Status Share WA'])}</span></td>
+                  <td><span style="padding:4px 8px; border-radius:6px; font-size:0.8rem; background:${e['Status Share WA']?.includes('Sudah') ? 'rgba(16,185,129,0.15); color:#10b981;' : 'rgba(239,68,68,0.15); color:#ef4444;'}">${escapeHtml(e['Status Share WA'] || 'Belum')}</span></td>
                   <td>
-                    ${!String(e['Status Share WA']).includes('Sudah') ? `<button class="btn btn-primary btn-sm" onclick="verifyShare('${e.ID}')">✅ Verifikasi</button>` : '<span style="color:var(--muted); font-size:0.85rem;">Selesai</span>'}
+                    ${!e['Status Share WA']?.includes('Sudah') ? `<button class="btn btn-primary btn-sm" onclick="verifyShare('${e.ID}')">✅ Verifikasi</button>` : '<span style="color:var(--muted); font-size:0.85rem;">Selesai</span>'}
                   </td>
                 </tr>
               `).join('')}
@@ -736,7 +652,7 @@
           <input type="text" placeholder="Tag" value="${escapeHtml(w.tag || '')}" class="w-tag">
           <input type="text" placeholder="Nama pemenang" value="${escapeHtml(w.nama || '')}" class="w-nama">
           <input type="text" placeholder="Kota" value="${escapeHtml(w.kota || '')}" class="w-kota">
-          <input type="text" placeholder="Tgl Diumumkan di WA" value="${escapeHtml(w.tanggalWa || '')}" class="w-tanggal">
+          <input type="text" placeholder="Tanggal Diumumkan di WA (cth: 25 Okt 2026)" value="${escapeHtml(w.tanggalWa || '')}" class="w-tanggal">
           <input type="text" placeholder="Deskripsi hadiah" value="${escapeHtml(w.deskripsi || '')}" class="w-deskripsi">
           <button type="button" class="remove-winner" onclick="removeWinnerRow(this)">✕</button>
         </div>`;
@@ -794,22 +710,12 @@
     $('#closeModal').addEventListener('click', () => $('#adminModal').classList.remove('active'));
     $('#adminModal').addEventListener('click', (e) => { if (e.target.id === 'adminModal') $('#adminModal').classList.remove('active'); });
     $('#saveContactButton').addEventListener('click', downloadContact);
+    $('#saveContactButtonSecondary').addEventListener('click', downloadContact);
     window.addEventListener('scroll', () => $('#navbar').classList.toggle('scrolled', window.scrollY > 20));
 
-    // Scroll Animation Observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('active'); }
-      });
-    }, { threshold: 0.1 });
-    $$('.reveal').forEach(el => observer.observe(el));
-
-  // Cek apakah URL masih berupa placeholder atau kosong
-if (SCRIPT_URL.includes('YOUR_SCRIPT_URL') || SCRIPT_URL === '') {
-  setTimeout(() => showToast('⚠️ Ganti SCRIPT_URL di kode dengan URL Apps Script Anda!', 'error'), 1000);
-} else { 
-  loadPublicData(); 
-}
+    if (SCRIPT_URL === 'YOUR_SCRIPT_URL') {
+      setTimeout(() => showToast('⚠️ Ganti SCRIPT_URL di kode dengan URL Apps Script Anda!', 'error'), 500);
+    } else { loadPublicData(); }
   </script>
 </body>
 </html>
