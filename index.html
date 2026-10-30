@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BonusHub | Promo & Giveaway Resmi</title>
+  <meta name="description" content="Landing page promo dan giveaway yang elegan, transparan, dan siap dipublikasikan melalui GitHub Pages.">
+  
+  <!-- Preconnect untuk performa font yang lebih baik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #030712;
+      --bg-soft: #0f172a;
+      --panel: rgba(15, 23, 42, 0.65);
+      --panel-strong: rgba(15, 23, 42, 0.92);
+      --line: rgba(148, 163, 184, 0.12);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --brand: #10b981;
+      --brand-glow: rgba(16, 185, 129, 0.4);
+      --brand-2: #3b82f6;
+      --accent: #f59e0b;
+      --danger: #f43f5e;
+      --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      --radius-xl: 24px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --max: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px; /* Mencegah navbar menutupi judul section */
+    }
+
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08), transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(59, 130, 246, 0.08), transparent 40%),
+        linear-gradient(180deg, #020617 0%, #0f172a 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Latar belakang grid halus untuk kesan tech/profesional */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Scrollbar kustom premium */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* --- Animasi Scroll Reveal --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- Navbar --- */
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(20px) saturate(180%);
+      background: rgba(2, 6, 23, 0.75);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 1.1rem;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #020617;
+      font-size: 1rem;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--line);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      padding: 96px 0 64px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .section-card,
+    .glass-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(24px) saturate(180%);
+    }
+
+    .hero-copy {
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      inset: auto -100px -100px auto;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent 70%);
+      pointer-events: none;
+      filter: blur(40px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.1);
+      color: #6ee7b7;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 20px 0 20px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+      background: linear-gradient(to right, #fff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-copy p {
+      margin: 0 0 32px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 60ch;
+      line-height: 1.7;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      padding: 14px 24px;
+      border-radius: var(--radius-lg);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      color: #020617;
+      background: linear-gradient(135deg, var(--brand), #34d399);
+      box-shadow: 0 12px 24px rgba(16, 185, 129, 0.25);
+    }
+
+    .btn-primary::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .btn-primary:hover::after {
+      left: 100%;
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .stat {
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+      transition: transform 0.3s ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    /* --- Hero Card --- */
+    .hero-card {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #dbeafe;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      animation: pulse-glow 3s infinite ease-in-out;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+      50% { box-shadow: 0 0 0 6px rgba(59, 130, 246, 0); }
+    }
+
+    .prize-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .prize {
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+      border: 1px solid var(--line);
+      transition: border-color 0.3s ease;
+    }
+
+    .prize:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .prize strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .prize p, .muted {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .ticker {
+      display: grid;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .ticker-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .ticker-item strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* --- Sections General --- */
+    section {
+      padding: 40px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      letter-spacing: -0.03em;
+      font-weight: 800;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 55ch;
+      font-size: 1.05rem;
+    }
+
+    .feature-grid,
+    .winner-grid,
+    .faq-grid,
+    .contact-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .section-card,
+    .glass-card {
+      padding: 32px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section-card:hover,
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+    }
+
+    .section-card h3,
+    .glass-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .icon-dot {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(59, 130, 246, 0.2));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #6ee7b7;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+    }
+
+    .notice-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .notice {
+      padding: 18px 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .notice::before {
+      content: "✓";
+      color: var(--brand);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-box {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+    }
+
+    .contact-number {
+      display: block;
+      margin: 8px 0 20px;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    /* --- Form --- */
+    form {
+      display: grid;
+      gap: 20px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      font: inherit;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(148, 163, 184, 0.6);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--brand);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      cursor: pointer;
+    }
+
+    .consent input {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      padding: 0;
+      accent-color: var(--brand);
+      cursor: pointer;
+    }
+
+    /* --- Winners --- */
+    .winner-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .winner-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .winner-card::before {
+      content: "";
+      position: absolute;
+      inset: -20% auto auto -20%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.25), transparent 70%);
+      pointer-events: none;
+      filter: blur(30px);
+    }
+
+    .winner-card strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .winner-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fef3c7;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      margin-bottom: 16px;
+    }
+
+    /* --- FAQ --- */
+    .faq-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .faq-item h3 {
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .status-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--line);
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .entry-list {
+      margin-top: 20px;
+      display: grid;
+      gap: 12px;
+      max-height: 320px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .entry-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: background 0.2s ease;
+    }
+
+    .entry-item:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .entry-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .entry-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .entry-meta::before {
+      content: "•";
+      color: var(--brand);
+    }
+
+    /* --- Footer --- */
+    .footer {
+      padding: 48px 0 64px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      padding: 32px;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--line);
+    }
+
+    /* --- Toast Notification --- */
+    .toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      border-radius: var(--radius-lg);
+      background: var(--panel-strong);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--text);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(16, 185, 129, 0.1);
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .toast-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #020617;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 980px) {
+      .hero-grid,
+      .two-col,
+      .feature-grid,
+      .winner-grid,
+      .faq-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field-row,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .footer-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero-copy,
+      .hero-card,
+      .section-card,
+      .glass-card {
+        padding: 24px;
+      }
+
+      .navbar {
+        gap: 12px;
+      }
+
+      .nav-cta {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <div class="container navbar">
+      <a class="brand" href="#home" aria-label="BonusHub">
+        <span class="brand-badge">BH</span>
+        <span>BonusHub Promo</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi">
+        <a href="#fitur">Fitur</a>
+        <a href="#kontak">Kontak</a>
+        <a href="#pemenang">Pemenang</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta" href="#daftar">Daftar Sekarang</a>
+    </div>
+  </div>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">✨ Promo Profesional • Transparan • Siap GitHub Pages</span>
+          <h1>Bangun halaman promo dan giveaway yang premium, rapi, dan dipercaya.</h1>
+          <p>
+            Template ini dirancang untuk kampanye yang jujur dan aman: pengunjung bisa menyimpan nomor admin,
+            mendaftar secara sukarela, melihat pengumuman pemenang, dan memahami aturan promo dengan jelas.
+          </p>
+          <div class="cta-row">
+            <button class="btn btn-primary" id="saveContactButton" type="button">
+              <span>💾</span> Simpan Nomor Admin
+            </button>
+            <a class="btn btn-secondary" href="#daftar">Gabung Giveaway</a>
+          </div>
+          <div class="stats" aria-label="Statistik kampanye">
+            <div class="stat">
+              <strong>1 File</strong>
+              <span>Langsung upload ke GitHub Pages</span>
+            </div>
+            <div class="stat">
+              <strong>100%</strong>
+              <span>Front-end tanpa server</span>
+            </div>
+            <div class="stat">
+              <strong>Premium</strong>
+              <span>Visual modern & responsif</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card reveal">
+          <div class="card-header">
+            <div>
+              <strong style="font-size:1.2rem; display:block; margin-bottom:4px;">Program Minggu Ini</strong>
+              <p class="muted">Contoh hadiah dan benefit yang bisa Anda sesuaikan.</p>
+            </div>
+            <span class="chip">
+              <span style="width:6px; height:6px; background:#60a5fa; border-radius:50%;"></span>
+              Terverifikasi
+            </span>
+          </div>
+          <div class="prize-grid">
+            <div class="prize">
+              <strong>🎁 Bonus Referral</strong>
+              <p>Berikan reward yang jelas untuk peserta yang mengajak teman secara sukarela.</p>
+            </div>
+            <div class="prize">
+              <strong>💎 Saldo / Hadiah Utama</strong>
+              <p>Atur nominal, syarat, dan waktu pengumuman secara terbuka di halaman ini.</p>
+            </div>
+            <div class="prize">
+              <strong>📢 Publikasi Pemenang</strong>
+              <p>Umumkan daftar pemenang secara manual dan transparan agar mudah dibagikan.</p>
+            </div>
+          </div>
+          <div class="ticker" aria-label="Ringkasan aktivitas">
+            <div class="ticker-item"><span>Mode kampanye</span><strong>Manual & Transparan</strong></div>
+            <div class="ticker-item"><span>Penyimpanan demo</span><strong>Browser lokal</strong></div>
+            <div class="ticker-item"><span>Integrasi lanjut</span><strong>Siap ke Form/Spreadsheet</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="fitur">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Fitur Inti</h2>
+            <p>Semua elemen dibuat untuk landing page promosi yang elegan, jelas, dan mudah dipercaya calon peserta.</p>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <article class="section-card reveal">
+            <div class="icon-dot">01</div>
+            <h3>Tombol Simpan Nomor</h3>
+            <p class="muted">Menghasilkan file kontak `VCF` agar pengunjung dapat menyimpan nomor admin dengan satu klik tanpa ribet.</p>
+          </article>
+          <article class="section-card reveal">
+            <div class="icon-dot">02</div>
+            <h3>Form Sukarela</h3>
+            <p class="muted">Pengunjung dapat mendaftar secara sadar melalui form minat yang memiliki persetujuan privasi eksplisit.</p>
+          </article>
+          <article class="section-card reveal">
+            <div class="icon-dot">03</div>
+            <h3>Area Pengumuman</h3>
+            <p class="muted">Bagian khusus untuk menampilkan pemenang, hadiah, serta status kampanye dengan tampilan premium.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container two-col">
+        <article class="glass-card reveal">
+          <div class="section-head">
+            <div>
+              <h2>Transparansi Kampanye</h2>
+              <p>Versi ini sengaja dibuat aman: tidak mengambil data tersembunyi, tidak memantau status WhatsApp, dan tidak memakai klaim palsu.</p>
+            </div>
+          </div>
+          <div class="notice-list">
+            <div class="notice">Peserta hanya mengirim data jika mereka setuju secara sadar melalui form.</div>
+            <div class="notice">Daftar pemenang dapat Anda edit manual di kode agar publikasi tetap jelas dan sesuai realitas.</div>
+            <div class="notice">Untuk produksi nyata, hubungkan form ini ke Google Forms, Sheets, Airtable, atau backend resmi Anda.</div>
+          </div>
+        </article>
+
+        <article class="glass-card reveal" id="kontak">
+          <h2 style="margin-top:0; font-size:1.5rem;">Kontak Admin</h2>
+          <p class="muted" style="margin-bottom:24px;">Ganti nama brand, nomor, dan pesan sesuai kebutuhan sebelum diunggah ke GitHub.</p>
+          <div class="contact-grid">
+            <div class="contact-box">
+              <span class="muted" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:600;">Nama kontak</span>
+              <strong class="contact-number" id="displayName">Admin BonusHub</strong>
+              <span class="muted" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:600;">Nomor WhatsApp</span>
+              <strong class="contact-number" id="displayPhone">+62 812-3456-7890</strong>
+              <div class="cta-row" style="margin:24px 0 0;">
+                <button class="btn btn-primary" id="saveContactButtonSecondary" type="button">Download Kontak</button>
+                <a class="btn btn-secondary" id="chatLink" href="https://wa.me/6281234567890" target="_blank" rel="noreferrer">Chat WhatsApp</a>
+              </div>
+            </div>
+            <div class="contact-box">
+              <span class="muted" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:600;">Status kampanye</span>
+              <div class="status-bar">
+                <span class="pill" style="color:#6ee7b7; border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.1);">● Promo aktif</span>
+                <span class="pill">Pengumuman manual</span>
+                <span class="pill">Data demo lokal</span>
+              </div>
+              <p class="muted" style="margin-top:20px; font-size:0.9rem; line-height:1.6;">
+                File ini tidak memiliki kemampuan melihat siapa yang menyimpan nomor atau melihat status orang lain. Untuk kebutuhan analitik, gunakan hanya sistem yang sah dan dengan persetujuan peserta.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="daftar">
+      <div class="container two-col">
+        <article class="glass-card reveal">
+          <div class="section-head">
+            <div>
+              <h2>Form Pendaftaran</h2>
+              <p>Contoh form minat untuk demo GitHub Pages. Data tersimpan di browser lokal perangkat pengunjung, bukan di server.</p>
+            </div>
+          </div>
+          <form id="entryForm">
+            <div class="field-row">
+              <label>
+                Nama Lengkap
+                <input id="fullName" name="fullName" type="text" placeholder="Masukkan nama lengkap" required>
+              </label>
+              <label>
+                Nomor WhatsApp
+                <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="08xxxxxxxxxx" required>
+              </label>
+            </div>
+            <div class="field-row">
+              <label>
+                Program Minat
+                <select id="program" name="program" required>
+                  <option value="">Pilih program</option>
+                  <option>Giveaway Mingguan</option>
+                  <option>Program Referral</option>
+                  <option>Info Promo Baru</option>
+                </select>
+              </label>
+              <label>
+                Kota
+                <input id="city" name="city" type="text" placeholder="Contoh: Surabaya">
+              </label>
+            </div>
+            <label>
+              Catatan
+              <textarea id="note" name="note" placeholder="Tulis pertanyaan atau pesan singkat jika diperlukan"></textarea>
+            </label>
+            <label class="consent">
+              <input id="consent" name="consent" type="checkbox" required>
+              <span>Saya setuju mengirim data ini secara sukarela untuk keperluan promo/giveaway yang dijelaskan di halaman ini.</span>
+            </label>
+            <div class="cta-row" style="margin-bottom:0;">
+              <button class="btn btn-primary" type="submit">Kirim Pendaftaran</button>
+              <button class="btn btn-secondary" id="clearEntriesButton" type="button">Hapus Data Demo</button>
+            </div>
+          </form>
+        </article>
+
+        <article class="glass-card reveal">
+          <h2 style="margin-top:0; font-size:1.5rem;">Daftar Masuk Demo</h2>
+          <p class="muted">Bagian ini hanya simulasi browser lokal untuk menunjukkan tampilan data masuk pada halaman statis.</p>
+          <div class="status-bar">
+            <span class="pill" id="entryCount" style="color:#6ee7b7; border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.1);">0 pendaftar</span>
+            <span class="pill">GitHub Pages friendly</span>
+          </div>
+          <div class="entry-list" id="entryList">
+            <div class="entry-item">
+              <div>
+                <strong>Belum ada data</strong>
+                <span style="display:block; margin-top:4px;">Isi form di sebelah kiri untuk melihat simulasi daftar masuk.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="pemenang">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Pengumuman Pemenang</h2>
+            <p>Edit langsung bagian ini untuk mengganti nama pemenang, jenis hadiah, dan waktu publikasi sesuai kampanye Anda.</p>
+          </div>
+        </div>
+        <div class="winner-grid">
+          <article class="section-card winner-card reveal">
+            <span class="winner-tag">🏆 Hadiah Utama</span>
+            <strong>Rina - Bandung</strong>
+            <p class="muted">Mendapat saldo promo Rp150.000 setelah verifikasi program selesai.</p>
+          </article>
+          <article class="section-card winner-card reveal">
+            <span class="winner-tag">🤝 Bonus Referral</span>
+            <strong>Ardi - Makassar</strong>
+            <p class="muted">Mendapat bonus referral minggu ini karena memenuhi syarat partisipasi.</p>
+          </article>
+          <article class="section-card winner-card reveal">
+            <span class="winner-tag">⭐ Pilihan Admin</span>
+            <strong>Salsa - Medan</strong>
+            <p class="muted">Ditampilkan sebagai contoh pemenang untuk kebutuhan desain dan publikasi kampanye.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>FAQ</h2>
+            <p>Penjelasan singkat agar pengunjung mengerti fungsi halaman dan cara kerja promonya.</p>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <article class="section-card faq-item reveal">
+            <h3>Apakah halaman ini bisa langsung diunggah ke GitHub?</h3>
+            <p class="muted">Bisa. Simpan file ini sebagai `index.html`, unggah ke repository GitHub, lalu aktifkan GitHub Pages di pengaturan repository.</p>
+          </article>
+          <article class="section-card faq-item reveal">
+            <h3>Apakah data peserta masuk ke database?</h3>
+            <p class="muted">Belum. Versi ini hanya demo front-end. Untuk data nyata, sambungkan ke layanan formulir atau backend resmi.</p>
+          </article>
+          <article class="section-card faq-item reveal">
+            <h3>Apakah bisa melihat siapa yang menyimpan nomor kita?</h3>
+            <p class="muted">Tidak. Hal itu tidak tersedia secara sah dari halaman HTML statis dan tidak disediakan di template ini demi privasi.</p>
+          </article>
+          <article class="section-card faq-item reveal">
+            <h3>Bagaimana cara mengganti nomor admin?</h3>
+            <p class="muted">Edit konfigurasi JavaScript pada bagian `siteConfig` di bagian bawah kode untuk mengganti nama kontak, nomor WhatsApp, dan tautan chat.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-card reveal">
+      <div>
+        <strong style="font-size:1.1rem; color:var(--text);">BonusHub Promo</strong>
+        <p class="muted" style="margin:8px 0 0; max-width:40ch;">Template promo profesional untuk GitHub Pages, dirancang untuk kampanye yang transparan dan mudah dimodifikasi.</p>
+      </div>
+      <div class="muted" style="text-align:right; font-size:0.85rem;">
+        Edit teks, hadiah, pemenang, dan kontak<br>sesuai brand Anda sebelum dipublikasikan.
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" aria-live="polite">
+    <div class="toast-icon">✓</div>
+    <span id="toastMessage">Notifikasi</span>
+  </div>
+
+  <script>
+    // ==========================================
+    // KONFIGURASI SITE (EDIT DI SINI)
+    // ==========================================
+    const siteConfig = {
+      brandName: "BonusHub Promo",
+      adminName: "Admin BonusHub",
+      whatsappRaw: "6281234567890", // Format: 628xxx (tanpa + atau spasi)
+      whatsappDisplay: "+62 812-3456-7890" // Format untuk tampilan
+    };
+
+    const storageKey = "bonushub-demo-entries";
+    const entryForm = document.getElementById("entryForm");
+    const entryList = document.getElementById("entryList");
+    const entryCount = document.getElementById("entryCount");
+    const clearEntriesButton = document.getElementById("clearEntriesButton");
+    const toast = document.getElementById("toast");
+    const toastMessage = document.getElementById("toastMessage");
+    const displayName = document.getElementById("displayName");
+    const displayPhone = document.getElementById("displayPhone");
+    const chatLink = document.getElementById("chatLink");
+
+    // --- Fungsi Utilitas ---
+    function showToast(message) {
+      toastMessage.textContent = message;
+      toast.classList.add("show");
+      window.clearTimeout(showToast.timer);
+      showToast.timer = window.setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+
+    function getEntries() {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey)) || [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function saveEntries(entries) {
+      localStorage.setItem(storageKey, JSON.stringify(entries));
+    }
+
+    function maskPhone(phone) {
+      const clean = phone.replace(/\D/g, "");
+      if (clean.length < 6) return phone;
+      return clean.slice(0, 4) + "****" + clean.slice(-3);
+    }
+
+    function escapeHtml(value) {
+      if (!value) return "";
+      return value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function formatDate(isoString) {
+      const date = new Date(isoString);
+      return date.toLocaleDateString('id-ID', { 
+        day: 'numeric', 
+        month: 'short', 
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+    }
+
+    function renderEntries() {
+      const entries = getEntries();
+      entryCount.textContent = entries.length + " pendaftar";
+
+      if (!entries.length) {
+        entryList.innerHTML = `
+          <div class="entry-item">
+            <div>
+              <strong>Belum ada data</strong>
+              <span style="display:block; margin-top:4px;">Isi form di sebelah kiri untuk melihat simulasi daftar masuk.</span>
+            </div>
+          </div>`;
+        return;
+      }
+
+      entryList.innerHTML = entries
+        .slice()
+        .reverse()
+        .map((entry) => {
+          const safeName = escapeHtml(entry.fullName);
+          const safeCity = escapeHtml(entry.city) || "Tidak disebutkan";
+          const safeProgram = escapeHtml(entry.program) || "Program umum";
+          const safeDate = formatDate(entry.createdAt);
+          
+          return `
+            <div class="entry-item">
+              <div>
+                <strong>${safeName}</strong>
+                <div class="entry-meta">
+                  <span>${maskPhone(entry.phoneNumber)}</span>
+                  <span>${safeProgram}</span>
+                  <span>${safeCity}</span>
+                </div>
+              </div>
+              <div style="text-align:right; font-size:0.8rem; color:var(--muted); white-space:nowrap;">
+                ${safeDate}
+              </div>
+            </div>`;
+        })
+        .join("");
+    }
+
+    function downloadContact() {
+      const vcf = [
+        "BEGIN:VCARD",
+        "VERSION:3.0",
+        "FN:" + siteConfig.adminName,
+        "ORG:" + siteConfig.brandName,
+        "TEL;TYPE=CELL,VOICE:" + siteConfig.whatsappRaw,
+        "NOTE:Kontak admin promo resmi",
+        "END:VCARD"
+      ].join("\n");
+
+      const blob = new Blob([vcf], { type: "text/vcard;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "kontak-admin-bonushub.vcf";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      showToast("File kontak berhasil diunduh.");
+    }
+
+    function applyConfig() {
+      displayName.textContent = siteConfig.adminName;
+      displayPhone.textContent = siteConfig.whatsappDisplay;
+      chatLink.href = "https://wa.me/" + siteConfig.whatsappRaw;
+      document.title = siteConfig.brandName + " | Promo & Giveaway Resmi";
+    }
+
+    // --- Event Listeners ---
+    document.getElementById("saveContactButton").addEventListener("click", downloadContact);
+    document.getElementById("saveContactButtonSecondary").addEventListener("click", downloadContact);
+
+    entryForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!document.getElementById("consent").checked) {
+        showToast("Persetujuan privasi wajib dicentang.");
+        return;
+      }
+
+      const formData = new FormData(entryForm);
+      const entry = {
+        fullName: (formData.get("fullName") || "").toString().trim(),
+        phoneNumber: (formData.get("phoneNumber") || "").toString().trim(),
+        program: (formData.get("program") || "").toString().trim(),
+        city: (formData.get("city") || "").toString().trim(),
+        note: (formData.get("note") || "").toString().trim(),
+        createdAt: new Date().toISOString()
+      };
+
+      const entries = getEntries();
+      entries.push(entry);
+      saveEntries(entries);
+      entryForm.reset();
+      renderEntries();
+      showToast("Pendaftaran demo berhasil disimpan di browser.");
+    });
+
+    clearEntriesButton.addEventListener("click", () => {
+      if (confirm("Apakah Anda yakin ingin menghapus semua data demo lokal?")) {
+        localStorage.removeItem(storageKey);
+        renderEntries();
+        showToast("Semua data demo lokal sudah dihapus.");
+      }
+    });
+
+    // --- Scroll Reveal Animation ---
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target); // Hanya animasi sekali
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll(".reveal").forEach(el => {
+      observer.observe(el);
+    });
+
+    // --- Inisialisasi ---
+    applyConfig();
+    renderEntries();
+  </script>
+</body>
+</html>
